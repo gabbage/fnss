@@ -924,7 +924,7 @@ def validate_traffic_matrix(topology, traffic_matrix, validate_load=False):
                 topology.edge[u][v]['load'] = 0
             capacity_unit = capacity_units[topology.graph['capacity_unit']]
             volume_unit = capacity_units[matrix.attrib['volume_unit']]
-            norm_factor = float(capacity_unit)/float(volume_unit)
+            norm_factor = float(volume_unit)/float(capacity_unit)
             for o, d in od_pairs_tm:
                 path = shortest_path[o][d]
                 if len(path) <= 1:
